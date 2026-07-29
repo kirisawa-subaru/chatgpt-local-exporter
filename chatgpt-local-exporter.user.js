@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT Local Incremental Exporter
 // @namespace    local.chatgpt.exporter
-// @version      0.2.4
+// @version      0.2.5
 // @description  Export ChatGPT conversations and Projects from the logged-in web app to a local zip.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -13,7 +13,7 @@
   "use strict";
 
   const EXPORTER_NAME = "chatgpt-local-exporter";
-  const EXPORTER_VERSION = "0.2.4";
+  const EXPORTER_VERSION = "0.2.5";
   const LIST_LIMIT = 100;
   const PROJECT_LIST_LIMIT = 50;
   const PROJECT_CONVERSATION_LIMIT = 20;
