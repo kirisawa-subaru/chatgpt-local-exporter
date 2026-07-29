@@ -4,6 +4,7 @@
 
 一个小型浏览器扩展，用于将你的 ChatGPT 或 Claude 对话下载为本地 ZIP归档。
 扩展完全在浏览器中运行,纯粹的本地浏览器脚本。使用当前网站已有的登录会话。
+
 <img width="860" height="519" alt="image" src="https://github.com/user-attachments/assets/611e4a4b-fca9-4644-a95a-7e9874f2cb5c" />
 
 ## 功能
