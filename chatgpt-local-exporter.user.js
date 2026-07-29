@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT Local Incremental Exporter
 // @namespace    local.chatgpt.exporter
-// @version      0.2.5
+// @version      0.2.6
 // @description  Export ChatGPT conversations and Projects from the logged-in web app to a local zip.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -13,7 +13,7 @@
   "use strict";
 
   const EXPORTER_NAME = "chatgpt-local-exporter";
-  const EXPORTER_VERSION = "0.2.5";
+  const EXPORTER_VERSION = "0.2.6";
   const LIST_LIMIT = 100;
   const PROJECT_LIST_LIMIT = 50;
   const PROJECT_CONVERSATION_LIMIT = 20;
@@ -1015,16 +1015,18 @@
           );
         }
 
-        if (![500, 502, 503, 504].includes(response.status) || attempt === MAX_RETRIES) {
-          const error = new Error(`${message} while fetching ${path}${body ? `: ${body.slice(0, 240)}` : ""}`);
-          error.status = response.status;
-          error.path = path;
-          throw error;
-        }
+        const retryable = [500, 502, 503, 504].includes(response.status);
+        const error = new Error(`${message} while fetching ${path}${body ? `: ${body.slice(0, 240)}` : ""}`);
+        error.status = response.status;
+        error.path = path;
+        error.retryable = retryable;
 
-        lastError = new Error(message);
+        if (!retryable || attempt === MAX_RETRIES) throw error;
+
+        lastError = error;
       } catch (error) {
         if (error instanceof RateLimitPauseError) throw error;
+        if (error.retryable === false) throw error;
         lastError = error;
         if (attempt === MAX_RETRIES) break;
       }
