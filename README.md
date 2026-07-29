@@ -1,11 +1,12 @@
 # ChatGPT / Claude Local Exporter
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 A small browser extension that downloads your ChatGPT or Claude conversations
 as a local ZIP archive.
 
-The extension runs entirely in the browser. It uses the logged-in session on
-the current site, makes no requests to a developer-owned server, and includes
-no analytics or telemetry.
+The extension runs entirely in the browser as a purely local browser script.
+It uses the current site's existing logged-in session.
 
 ## Features
 
@@ -18,7 +19,7 @@ no analytics or telemetry.
 
 ## Install in Chrome
 
-1. Download or clone this repository.
+1. Download the archive from Releases.
 2. Open `chrome://extensions/`.
 3. Enable **Developer mode**.
 4. Click **Load unpacked**.
@@ -44,7 +45,7 @@ markdown/<path>/<conversation-title>-<short-id>.md
 ```
 
 The archive may contain private conversations, metadata, file references, and
-other information returned by the provider. Store and share it accordingly.
+other information returned by the provider.
 
 ## Install as a userscript
 
@@ -56,8 +57,7 @@ chatgpt-local-exporter.user.js
 
 ## Development
 
-There is no build step and no runtime dependency. The submitted source is the
-source that runs in the browser.
+The source committed to this repository is the source that runs in the browser.
 
 Basic syntax check:
 
@@ -65,8 +65,8 @@ Basic syntax check:
 node --check chatgpt-local-exporter.user.js
 ```
 
-The extension depends on the websites' current internal response formats, so a
-site update may require a corresponding exporter update.
+The extension depends on the websites' current internal response formats.
+A site update may require a corresponding exporter update.
 
 ## License
 
