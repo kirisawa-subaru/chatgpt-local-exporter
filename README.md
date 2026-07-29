@@ -2,9 +2,7 @@
 
 [简体中文](README.md) | [English](README.en.md)
 
-一个小型浏览器扩展，用于将你的 ChatGPT 或 Claude 对话下载为本地 ZIP
-归档。
-
+一个小型浏览器扩展，用于将你的 ChatGPT 或 Claude 对话下载为本地 ZIP归档。
 扩展完全在浏览器中运行,纯粹的本地浏览器脚本。使用当前网站已有的登录会话。
 
 ## 功能
@@ -16,7 +14,7 @@
 - 服务商返回 HTTP 429 时立即停止。
 - 将增量导出状态保存在当前浏览器配置中。
 
-## 在 Chrome 中安装
+## 在 Chrome / Edge 中安装
 
 1. 在release里下载压缩包。
 2. 打开 `chrome://extensions/`。
@@ -25,7 +23,7 @@
 5. 选择本仓库所在目录。
 6. 打开 [ChatGPT](https://chatgpt.com/) 或 [Claude](https://claude.ai/)。
 
-页面右下角会出现导出面板。
+页面右下角会出现半透明的导出面板。
 
 ## 使用
 
