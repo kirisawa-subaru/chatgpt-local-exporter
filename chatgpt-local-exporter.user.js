@@ -434,30 +434,36 @@
           z-index: 2147483647;
           width: 36px;
           height: 36px;
-          border: none;
+          border: 1px solid rgba(255, 255, 255, 0.24);
           border-radius: 8px 0 0 8px;
-          background: rgba(36, 36, 38, 0.7);
-          color: #e8e8e8;
+          background: rgba(32, 32, 34, 0.94);
+          color: #fff;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.38);
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 14px;
+          font-weight: 700;
+          line-height: 1;
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
-          opacity: 0.5;
+          opacity: 0.82;
           transition: opacity 160ms;
         }
         .trigger:hover {
-          opacity: 0.85;
+          opacity: 1;
         }
         .trigger.hidden {
           display: none;
         }
-        @media (prefers-color-scheme: light) {
+        @media (forced-colors: active) {
           .trigger {
-            background: rgba(0, 0, 0, 0.06);
-            color: #333;
+            border: 1px solid ButtonText;
+            background: ButtonFace;
+            color: ButtonText;
+            box-shadow: none;
+            opacity: 1;
           }
         }
         .box {
